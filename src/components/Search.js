@@ -8,7 +8,9 @@ function Search(props) {
         placeholder='Search your Recent Transactions'
         onChange={(e) =>
           props.setSearchData({ ...props.searchData, text: e.target.value })
+          
         }
+        onSubmit={props.handleSearch}
       />
       <i className='circular search link icon' onClick={props.handleSearch}></i>
     </div>

@@ -11,7 +11,11 @@ function AccountContainer(props) {
         searchData={props.searchData}
         handleSearch={props.handleSearch}
       />
-      <AddTransactionForm />
+      <AddTransactionForm  
+      formData={props.formData}
+      handleSubmit={props.handleSubmit}
+      setFormData={props.setFormData}
+      />
       <TransactionsList bankData={props.bankData} />
     </div>
   );

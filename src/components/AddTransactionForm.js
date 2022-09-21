@@ -1,26 +1,16 @@
 import React, { useState } from 'react';
 
-function AddTransactionForm() {
-  const [formData, setFOrmData] = useState({
-    date: '',
-    description: '',
-    category: '',
-    amount: '',
-  });
-
-  const handleSubmit = (e) => {
-    e.preventDEfault();
-    setFOrmData(formData);
-  };
+function AddTransactionForm({formData, setFormData, handleSubmit}) {
+ 
 
   return (
     <div className='ui segment'>
-      <form className='ui form' onSubmit={handleSubmit}>
+      <form className='ui form' onSubmit={(e)=> e.preventDefault()}>
         <div className='inline fields'>
           <input
             type='date'
             name='date'
-            onChange={(e) => setFOrmData({ ...formData, date: e.target.value })}
+            onChange={(e) => setFormData({ ...formData, date: e.target.value })}
             value={formData.date}
           />
           <input
@@ -28,7 +18,7 @@ function AddTransactionForm() {
             name='description'
             placeholder='Description'
             onChange={(e) =>
-              setFOrmData({ ...formData, description: e.target.value })
+              setFormData({ ...formData, description: e.target.value })
             }
             value={formData.description}
           />
@@ -37,7 +27,7 @@ function AddTransactionForm() {
             name='category'
             placeholder='Category'
             onChange={(e) =>
-              setFOrmData({ ...formData, category: e.target.value })
+              setFormData({ ...formData, category: e.target.value })
             }
             value={formData.category}
           />
@@ -47,7 +37,7 @@ function AddTransactionForm() {
             placeholder='Amount'
             step='0.01'
             onChange={(e) =>
-              setFOrmData({ ...formData, amount: e.target.value })
+              setFormData({ ...formData, amount: e.target.value })
             }
             value={formData.amount}
           />

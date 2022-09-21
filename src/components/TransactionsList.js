@@ -1,7 +1,7 @@
 import React from 'react';
 import Transaction from './Transaction';
 
-function TransactionsList(props) {
+function TransactionsList({bankData}) {
   return (
     <table className='ui celled striped padded table'>
       <tbody>
@@ -20,7 +20,7 @@ function TransactionsList(props) {
           </th>
         </tr>
         {/* render a list of <Transaction> components here */}
-        {props.bankData.map(({ id, description, amount, category,date }) => (
+        {bankData.length > 0 && bankData.map(({ id, description, amount, category,date }) => (
           <Transaction
             key={id}
             id={id}
