@@ -1,14 +1,18 @@
-import React from "react";
-import TransactionsList from "./TransactionsList";
-import Search from "./Search";
-import AddTransactionForm from "./AddTransactionForm";
+import React from 'react';
+import TransactionsList from './TransactionsList';
+import Search from './Search';
+import AddTransactionForm from './AddTransactionForm';
 
-function AccountContainer() {
+function AccountContainer(props) {
   return (
     <div>
-      <Search />
+      <Search
+        setSearchData={props.setSearchData}
+        searchData={props.searchData}
+        handleSearch={props.handleSearch}
+      />
       <AddTransactionForm />
-      <TransactionsList />
+      <TransactionsList bankData={props.bankData} />
     </div>
   );
 }

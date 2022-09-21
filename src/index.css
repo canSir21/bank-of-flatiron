@@ -1,9 +1,11 @@
+
+
 * {
   box-sizing: border-box;
   text-align: center;
 }
-
 input {
+
   width: 25% !important;
   margin-right: 0.25em!important;
   margin-left: 0.25em!important;
